@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.9)
+project(smmdb-client)
+
+set(CMAKE_CXX_STANDARD 11)
+#set(CMAKE_C_COMPILER $ENV{DEVKITPRO}/devkitA64/bin/aarch64-none-elf-gcc)
+#set(CMAKE_CXX_COMPILER $ENV{DEVKITPRO}/devkitA64/bin/aarch64-none-elf-g++)
+
+include_directories($ENV{DEVKITPRO}/libnx/lib)
+include_directories($ENV{DEVKITPRO}/libnx/include)
+include_directories($ENV{DEVKITPRO}/devkitA64/aarch64-none-elf/include)
+include_directories($ENV{DEVKITPRO}/devkitA64/lib/gcc/aarch64-none-elf/10.1.0/include)
+include_directories($ENV{DEVKITPRO}/portlibs/switch/include)
+link_directories($ENV{DEVKITPRO}/libnx/lib)
+link_directories($ENV{DEVKITPRO}/libnx/include)
+link_directories($ENV{DEVKITPRO}/devkitA64/aarch-none-elf/include)
+link_directories($ENV{DEVKITPRO}/devkitA64/lib/gcc/aarch-none-elf/10.1.0/include)
+link_directories($ENV{DEVKITPRO}/portlibs/switch/include)
+add_executable(smmdb-client source/main.cpp)
